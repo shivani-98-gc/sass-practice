@@ -1,0 +1,57 @@
+$primary-color:#01343c;
+$light-color:#fff;
+
+
+
+@mixin no-space{
+    margin:0;
+    padding:0px;
+}
+@mixin flex-property{
+    display:flex!important;
+    align-items: center;
+    justify-content: center;
+}
+@mixin float-property($justify){
+    
+    display:flex;
+    align-items: center;
+    justify-content: $justify;
+}
+$font-weights: ("regular": 400, "medium": 500, "bold": 700);
+
+body{
+    @include no-space;
+}
+.header-container{
+    background-color: $primary-color;
+  }
+.header{
+    @include float-property(space-between);
+    max-width:1200px;
+    margin:0 auto;
+    padding:15px 0;
+ 
+   
+
+    h3{
+        margin:0px;
+        color:$light-color;
+        font-size: 30px;
+    }
+    ul 
+    {
+        @include no-space;
+        @include flex-property;
+        gap:20px;
+        li{
+            list-style:none;
+            a{
+                text-decoration: none;
+                color:$light-color;
+                font-size:1px;
+            }
+        }
+        }
+
+    }
